@@ -2,6 +2,7 @@ build:
 	mkdir -p ./bin/linux
 	mkdir -p ./bin/windows
 	mkdir -p ./bin/darwin
+	GOOS=linux GOARCH=arm GOARM=6 go build -o ./bin/linux/solaredge-exporter-zero main.go
 	GOOS=linux GOARCH=amd64 go build -o ./bin/linux/solaredge-exporter main.go
 	GOOS=linux GOARCH=arm64 go build -o ./bin/linux/solaredge-exporter-arm main.go
 	GOOS=windows GOARCH=amd64 go build -o ./bin/windows/solaredge-exporter.exe main.go
